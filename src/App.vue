@@ -18,6 +18,11 @@ export default {
 };
 </script>
 <style lang="scss">
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -43,8 +48,8 @@ a {
   background-color: rgba(0, 0, 0, 0.6);
   a {
     font-weight: bold;
-    height: 60px;
-    padding: 0 10px;
+    height: 6rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: center;
 
@@ -55,8 +60,26 @@ a {
 }
 .view {
   img {
-    height: 105vh;
+    height: 57vh;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  html {
+    font-size: 57.5%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 43.5%;
   }
 }
 </style>

@@ -33,11 +33,11 @@ export default {};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  padding: 0 20px;
+  height: 6rem;
+  padding: 0 2rem;
 }
 .links {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 .router-container {
   display: grid;
@@ -50,13 +50,13 @@ export default {};
 .nav a {
   align-items: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 .nav > .brand {
   font-family: "Montserrat", sans-serif;
   background: none !important;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 2.4rem;
   color: #ffffff;
   text-decoration: none;
 }
@@ -80,7 +80,7 @@ export default {};
 }
 @media (max-width: 350px) {
   .nav a {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
 </style>

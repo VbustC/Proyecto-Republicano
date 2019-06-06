@@ -1,55 +1,55 @@
 <template>
-  <div id="footer">
-    <div class="logo-section">
-      <img src="@/assets/logo/logo.png" alt="logo">
-      <p>2019 Proyecto Republicano</p>
-      <p>Todos los Derechos Reservados</p>
+  <div class="footer">
+    <div class="footer__logo-section">
+      <img class="footer__logo" src="@/assets/logo/logo.png" alt="logo">
+      <p class="footer__paragraph">2019 Proyecto Republicano</p>
+      <p class="footer__paragraph">Todos los Derechos Reservados</p>
     </div>
-    <div class="info-section">
-      <h3>Mapa del sitio</h3>
-      <ul>
+    <div class="footer__info-section">
+      <h3 class="footer__heading-tertiary">Mapa del sitio</h3>
+      <ul class="footer__list">
         <li>
-          <router-link :to="{ name: 'home' }">
+          <router-link class="footer__link" :to="{ name: 'home' }">
             <span>Inicio</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'nosotros' }">
+          <router-link class="footer__link" :to="{ name: 'nosotros' }">
             <span>Nosotros</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'contacto' }">
+          <router-link class="footer__link" :to="{ name: 'contacto' }">
             <span>Contacto</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'blog' }">
+          <router-link class="footer__link" :to="{ name: 'blog' }">
             <span>Blog</span>
           </router-link>
         </li>
       </ul>
     </div>
-    <div class="social-section">
-      <h3>Redes sociales</h3>
+    <div class="footer__social-section">
+      <h3 class="footer__heading-tertiary">Redes sociales</h3>
       <div class>
-        <ul class>
+        <ul class="footer__list">
           <li class>
-            <a class>
+            <a class="footer__link">
               <i class="fab fa-facebook"></i>
-              <a href="https://twitter.com/ProRepublicano">Facebook</a>
+              <a class="footer__link" href="https://twitter.com/ProRepublicano">Facebook</a>
             </a>
           </li>
           <li class>
-            <a class>
+            <a class="footer__link">
               <i class="fab fa-twitter"></i>
-              <a href="https://twitter.com/ProRepublicano">Twitter</a>
+              <a class="footer__link" href="https://twitter.com/ProRepublicano">Twitter</a>
             </a>
           </li>
           <li class>
-            <a class>
+            <a class="footer__link">
               <i class="fab fa-instagram"></i>
-              <a href="https://twitter.com/ProRepublicano">Instagram</a>
+              <a class="footer__link" href="https://twitter.com/ProRepublicano">Instagram</a>
             </a>
           </li>
         </ul>
@@ -63,56 +63,57 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-#footer {
+.footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: #1b1d23;
-  padding: 15px 30px;
-  a,
-  a:hover,
-  a:active,
-  a:focus,
-  p,
-  span,
-  h3 {
+  padding: 1.5rem 3rem;
+
+  &__link,
+  &__link :hover,
+  &__link :active,
+  &__link :focus,
+  &__paragraph,
+  &__heading-tertiary {
     color: #ffffff;
     text-decoration: none;
+    font-size: 1.6rem;
   }
-  .logo-section {
+  &__logo-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    img {
-      width: 180px;
-      margin-bottom: 15px;
-    }
-    p {
-      margin: 0;
-    }
   }
-  .info-section,
-  .social-section {
-    ul {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-auto-flow: row;
-      grid-template-rows: repeat(4, 48px);
-      align-items: center;
-      font-size: 18px;
-    }
+
+  &__logo {
+    width: 18rem;
+    margin-bottom: 1.5rem;
   }
-  .social-section {
-    a {
-      margin-left: 10px;
-    }
+
+  &__paragraph {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(4, 48px);
+    align-items: center;
+    font-size: 1.8rem;
+  }
+
+  &__link {
+    margin-left: 1rem;
   }
 }
 @media (max-width: 480px) {
-  #footer {
+  .footer {
     display: block;
-    padding: 20px 30px 0px;
+    padding: 2rem 3rem 0px;
     height: 100%;
   }
 }

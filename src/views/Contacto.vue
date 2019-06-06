@@ -1,23 +1,23 @@
 <template>
   <div>
-    <section id="form-section">
-      <h2>Formulario de contacto</h2>
-      <form class="contact-form" @submit="formSubmit">
-        <h3>Información personal</h3>
-        <span>Nombre</span>
-        <input type="text" name="nombre" ref="nombre">
-        <span>Apellido</span>
-        <input type="text" name="apellido" ref="apellido">
-        <span>Teléfono</span>
-        <input type="text" name="telefono" ref="telefono">
-        <h3>Información del correo</h3>
-        <span>Correo</span>
-        <input type="email" name="correo" ref="correo">
-        <span>Asunto</span>
-        <input type="text" name="asunto" ref="asunto">
-        <span>Mensaje</span>
-        <textarea name="mensaje" ref="mensaje"></textarea>
-        <button type="submit">CONTACTAR</button>
+    <section class="form">
+      <h2 class="form__heading-secondary">Formulario de contacto</h2>
+      <form class="form__contact" @submit="formSubmit">
+        <h3 class="form__heading-tertiary">Información personal</h3>
+        <span class="form__text-span">Nombre</span>
+        <input class="form__input" type="text" name="nombre" ref="nombre" required>
+        <span class="form__text-span">Apellido</span>
+        <input class="form__input" type="text" name="apellido" ref="apellido" required>
+        <span class="form__text-span">Teléfono</span>
+        <input class="form__input" type="text" name="telefono" ref="telefono" required>
+        <h3 class="form__heading-tertiary">Información del correo</h3>
+        <span class="form__text-span">Correo</span>
+        <input class="form__input" type="email" name="correo" ref="correo" required>
+        <span class="form__text-span">Asunto</span>
+        <input class="form__input" type="text" name="asunto" ref="asunto" required>
+        <span class="form__text-span">Mensaje</span>
+        <textarea class="form__text-area" name="mensaje" ref="mensaje" required></textarea>
+        <button class="form__button" type="submit">CONTACTAR</button>
       </form>
     </section>
   </div>
@@ -31,6 +31,17 @@ export default {
     formSubmit(e) {
       var currentObj = this;
       e.preventDefault();
+      if (
+        !currentObj.$refs.nombre.value ||
+        !currentObj.$refs.apellido.value ||
+        !currentObj.$refs.telefono.value ||
+        !currentObj.$refs.correo.value ||
+        !currentObj.$refs.asunto.value ||
+        !currentObj.$refs.mensaje.value
+      ) {
+        alert("Debe rellenar todos los campos para poder enviar su mensaje");
+        return 0;
+      }
       axios
         .post("http://localhost:3000/send-mail", {
           nombre: currentObj.$refs.nombre.value,
@@ -42,9 +53,17 @@ export default {
         })
         .then(function(response) {
           currentObj.output = response.data;
+          currentObj.$refs.nombre.value = "";
+          currentObj.$refs.apellido.value = "";
+          currentObj.$refs.telefono.value = "";
+          currentObj.$refs.correo.value = "";
+          currentObj.$refs.asunto.value = "";
+          currentObj.$refs.mensaje.value = "";
+          alert("Su mensaje se ha enviado correctamente");
         })
         .catch(function(error) {
           currentObj.output = error;
+          alert("Hubo un error inesperado, no pudimos enviar su mensaje");
         });
     }
   }
@@ -52,64 +71,75 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#form-section {
-  padding: 60px 0 20px 0;
+.form {
+  padding: 6rem 0 2rem 0;
   width: 80%;
   margin: 0 auto;
-  &,
-  .contact-form {
+
+  &__contact {
     display: flex;
     flex-direction: column;
   }
-  h2,
-  h3,
-  span {
+
+  &__heading-secondary,
+  &__heading-tertiary,
+  &__text-span {
     color: #0d2773;
     display: block;
     align-self: start;
   }
-  h2 {
-    font-size: 40px;
+
+  &__heading-secondary {
+    font-size: 4rem;
     margin-bottom: 0;
   }
-  h3 {
-    font-size: 30px;
+
+  &__heading-tertiary {
+    font-size: 3rem;
   }
-  span {
-    font-size: 20px;
+
+  &__text-span {
+    font-size: 2rem;
   }
-  input,
-  textarea {
+
+  &__input,
+  &__text-area {
     width: 100%;
-    margin: 20px auto;
-    font-size: 18px;
+    margin: 2rem auto;
+    font-size: 1.8rem;
     color: #3b3939;
     border-radius: 3px;
     border: 1px solid #536caf;
     background-color: #dadce0;
   }
-  input {
-    height: 30px;
+
+  &__input {
+    height: 3rem;
   }
-  textarea {
-    height: 100px;
+
+  &__text-area {
+    height: 10rem;
     resize: none;
   }
-  button[type="submit"] {
-    width: 200px;
-    height: 80px;
+
+  &__button[type="submit"] {
+    width: 20rem;
+    height: 8rem;
     color: #ffffff;
     background-color: #2b375a;
     border: none;
     border-radius: 5px;
     align-self: center;
-    font-size: 18px;
+    font-size: 1.8rem;
     letter-spacing: 2px;
+    cursor: pointer;
   }
 }
 @media (max-width: 800px) {
-  h2 {
-    margin-top: 60px;
+  .form {
+    &__heading-secondary {
+      margin-top: 6rem;
+    }
   }
 }
 </style>
