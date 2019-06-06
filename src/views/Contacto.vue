@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <section class="form">
       <h2 class="form__heading-secondary">Formulario de contacto</h2>
       <form class="form__contact" @submit="formSubmit">
@@ -71,6 +71,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  margin: 0 3rem;
+  background-color: #f7f7f7;
+}
+
 .form {
   padding: 6rem 0 2rem 0;
   width: 80%;

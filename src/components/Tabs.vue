@@ -1,115 +1,115 @@
 <template>
-  <div class="tabs-section">
-    <div class="title-container">
-      <h2>PROPUESTAS</h2>
+  <div class="tabs">
+    <div class="tabs__title-container">
+      <h2 class="tabs__heading-secondary">PROPUESTAS</h2>
     </div>
-    <div class="tabs-container">
+    <div class="tabs__container">
       <span
-        class="tabs"
+        class="tabs__span"
         :class="{ activeTab: selectedTab === index }"
         v-for="(tab, index) in tabs"
         :key="index"
         @click="selectedTab = index"
       >{{ tab }}</span>
     </div>
-    <div class="tab-content">
+    <div class="tabs__tab-content">
       <div v-show="selectedTab === 0">
-        <div class="tab-content-wrap">
-          <div class="image-column">
-            <img :src="thumbnails[selectedTab]" alt="imagen">
+        <div class="tabs__tab-content-wrap">
+          <div class="tabs__image-column">
+            <img class="tabs__img" :src="thumbnails[selectedTab]" alt="imagen">
           </div>
-          <div class="description-column">
-            <h2>{{tabs[selectedTab]}}</h2>
-            <p>{{descriptions[selectedTab]}}</p>
-            <p>{{descriptions[selectedTab]}}</p>
+          <div class="tabs__description-column">
+            <h2 class="tabs__heading-secondaryTab">{{tabs[selectedTab]}}</h2>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
           </div>
         </div>
       </div>
       <div v-show="selectedTab === 1">
-        <div class="tab-content-wrap">
-          <div class="image-column">
-            <img :src="thumbnails[selectedTab]" alt="imagen">
+        <div class="tabs__tab-content-wrap">
+          <div class="tabs__image-column">
+            <img class="tabs__img" :src="thumbnails[selectedTab]" alt="imagen">
           </div>
-          <div class="description-column">
-            <h2>{{tabs[selectedTab]}}</h2>
-            <p>{{descriptions[selectedTab]}}</p>
-            <p>{{descriptions[selectedTab]}}</p>
+          <div class="tabs__description-column">
+            <h2 class="tabs__heading-secondaryTab">{{tabs[selectedTab]}}</h2>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
           </div>
         </div>
       </div>
       <div v-show="selectedTab === 2">
-        <div class="tab-content-wrap">
-          <div class="image-column">
-            <img :src="thumbnails[selectedTab]" alt="imagen">
+        <div class="tabs__tab-content-wrap">
+          <div class="tabs__image-column">
+            <img class="tabs__img" :src="thumbnails[selectedTab]" alt="imagen">
           </div>
-          <div class="description-column">
-            <h2>{{tabs[selectedTab]}}</h2>
-            <p>{{descriptions[selectedTab]}}</p>
-            <p>{{descriptions[selectedTab]}}</p>
+          <div class="tabs__description-column">
+            <h2 class="tabs__heading-secondaryTab">{{tabs[selectedTab]}}</h2>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
           </div>
         </div>
       </div>
       <div v-show="selectedTab === 3">
-        <div class="tab-content-wrap">
-          <div class="image-column">
-            <img :src="thumbnails[selectedTab]" alt="imagen">
+        <div class="tabs__tab-content-wrap">
+          <div class="tabs__image-column">
+            <img class="tabs__img" :src="thumbnails[selectedTab]" alt="imagen">
           </div>
-          <div class="description-column">
-            <h2>{{tabs[selectedTab]}}</h2>
-            <p>{{descriptions[selectedTab]}}</p>
-            <p>{{descriptions[selectedTab]}}</p>
+          <div class="tabs__description-column">
+            <h2 class="tabs__heading-secondaryTab">{{tabs[selectedTab]}}</h2>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
           </div>
         </div>
       </div>
       <div v-show="selectedTab === 4">
-        <div class="tab-content-wrap">
-          <div class="image-column">
-            <img :src="thumbnails[selectedTab]" alt="imagen">
+        <div class="tabs__tab-content-wrap">
+          <div class="tabs__image-column">
+            <img class="tabs__img" :src="thumbnails[selectedTab]" alt="imagen">
           </div>
-          <div class="description-column">
-            <h2>{{tabs[selectedTab]}}</h2>
-            <p>{{descriptions[selectedTab]}}</p>
-            <p>{{descriptions[selectedTab]}}</p>
+          <div class="tabs__description-column">
+            <h2 class="tabs__heading-secondaryTab">{{tabs[selectedTab]}}</h2>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
+            <p class="tabs__paragraph">{{descriptions[selectedTab]}}</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="title-container">
-      <h2>NUESTROS VALORES</h2>
+    <div class="tabs__title-container">
+      <h2 class="tabs__heading-secondary">NUESTROS VALORES</h2>
     </div>
-    <section id="proposals">
-      <div class="cards-container">
-        <div class="flex-row">
-          <div class="card">
-            <h2>ESTADO LIMITADO</h2>
-            <div class="image-container">
-              <img src="@/assets/temple.png" alt="justicia">
+    <section class="proposals">
+      <div class="proposals__cards-container">
+        <div class="proposals__flex-row">
+          <div class="proposals__card">
+            <h2 class="proposals__heading-secondary">ESTADO LIMITADO</h2>
+            <div class="proposals__image-container">
+              <img class="proposals__img" src="@/assets/temple.png" alt="justicia">
             </div>
           </div>
-          <div class="card">
-            <h2>PENSAMIENTO CRITICO</h2>
-            <div class="image-container">
-              <img src="@/assets/libra.png" alt="justicia">
+          <div class="proposals__card">
+            <h2 class="proposals__heading-secondary">PENSAMIENTO CRITICO</h2>
+            <div class="proposals__image-container">
+              <img class="proposals__img" src="@/assets/libra.png" alt="justicia">
             </div>
           </div>
-          <div class="card">
-            <h2>ESPIRITU EMPRESARIAL</h2>
-            <div class="image-container">
-              <img src="@/assets/transaction.png" alt="justicia">
+          <div class="proposals__card">
+            <h2 class="proposals__heading-secondary">ESPIRITU EMPRESARIAL</h2>
+            <div class="proposals__image-container">
+              <img class="proposals__img" src="@/assets/transaction.png" alt="justicia">
             </div>
           </div>
         </div>
-        <div class="grid-row-bottom">
-          <div class="card">
-            <h2>SOLIDARIDAD RESPONSABLE</h2>
-            <div class="image-container">
-              <img src="@/assets/voting.png" alt="justicia">
+        <div class="proposals__grid-row-bottom">
+          <div class="proposals__card--1">
+            <h2 class="proposals__heading-secondary">SOLIDARIDAD RESPONSABLE</h2>
+            <div class="proposals__image-container">
+              <img class="proposals__img" src="@/assets/voting.png" alt="justicia">
             </div>
           </div>
-          <div class="card">
-            <h2>MERITOCRACIA CIUDADANA</h2>
-            <div class="image-container">
-              <img src="@/assets/transaction.png" alt="justicia">
+          <div class="proposals__card--2">
+            <h2 class="proposals__heading-secondary">MERITOCRACIA CIUDADANA</h2>
+            <div class="proposals__image-container">
+              <img class="proposals__img" src="@/assets/transaction.png" alt="justicia">
             </div>
           </div>
         </div>
@@ -117,6 +117,8 @@
     </section>
   </div>
 </template>
+
+
 <script>
 export default {
   data() {
@@ -149,177 +151,180 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tabs-section {
-  margin: 0 0 30px 0;
-  .title-container {
-    margin: 40px auto;
+.tabs {
+  &__title-container {
+    margin: 4rem auto;
     background-color: #2b375a;
 
     color: #ffffff;
-    h2 {
-      font-size: 55px;
-      padding: 30px;
-    }
   }
-  .tab-content {
-    padding: 0 50px;
+
+  &__heading-secondary {
+    font-size: 5.5rem;
+    padding: 3rem;
   }
-  .tabs-container {
-    padding: 0 50px;
+
+  &__tab-content {
+    padding: 0 5rem;
+  }
+
+  &__paragraph {
+    font-size: 1.5rem;
+  }
+
+  &__container {
+    padding: 0 5rem;
     color: #566387;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 60px;
+    grid-template-rows: 6rem;
     align-items: center;
-
-    .tabs {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      font-size: 20px;
-      cursor: pointer;
-    }
-    .activeTab {
-      background-color: #566387;
-      color: #ffffff;
-      font-size: 20px;
-    }
   }
-  .tab-content-wrap {
+
+  &__span {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .activeTab {
+    background-color: #566387;
+    color: #ffffff;
+    font-size: 2rem;
+  }
+
+  &__tab-content-wrap {
     //border: 1px solid #566387;
     color: #ffffff;
     background-color: #566387;
     display: grid;
     grid-template-columns: 45% 55%;
-    .description-column {
-      padding: 30px;
-      h2 {
-        font-size: 2em;
-      }
-    }
-    .image-column {
-      img {
-        display: flex;
-        height: 100%;
-        max-width: 100%;
-      }
-    }
+  }
+
+  &__description-column {
+    padding: 3rem;
+  }
+
+  &__heading-secondaryTab {
+    font-size: 3.2rem;
+  }
+
+  &__img {
+    display: flex;
+    height: 100%;
+    max-width: 100%;
   }
 }
-#proposals {
-  .cards-container {
-    padding: 50px 0px;
+
+.proposals {
+  &__cards-container {
+    padding: 5rem 0px;
     margin: 0 auto;
-    .flex-row {
-      display: flex;
-      justify-content: space-around;
+  }
+
+  &__flex-row {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__grid-row-bottom {
+    margin: 5rem 15rem 0 15rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+  }
+
+  &__card {
+    width: 30rem;
+
+    &--1 {
+      justify-content: end;
     }
-    .grid-row-bottom {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 10%;
-    }
-    .grid-row-bottom > .card:first-child {
-      justify-self: end;
-    }
-    .card {
-      width: 300px;
-      .image-container {
-        img {
-          width: 180px;
-          margin: 20px 0;
-        }
-      }
-      .text-container {
-        a {
-          margin: 5px 0;
-          display: block;
-        }
-        a,
-        a:hover,
-        a:focus,
-        a:active {
-          color: #0d2773;
-        }
-      }
-    }
+  }
+  &__img {
+    width: 16rem;
+    height: 16rem;
+    margin: 2rem 0;
+  }
+
+  &__heading-secondary {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 842px) {
-  .tabs-section {
-    .tab-content-wrap {
+  .tabs {
+    &__tab-content-wrap {
       grid-template-columns: initial;
       grid-template-rows: 45% 55%;
-      .image-column {
-        grid-row-start: 2;
-        img {
-          width: 100%;
-        }
-      }
-      .description-column {
-        grid-row-start: 1;
-        padding: 5px 20px 30px;
+    }
+
+    &__image-column {
+      grid-row-start: 2;
+      img {
+        width: 100%;
       }
     }
+    &__description-column {
+      grid-row-start: 1;
+      padding: 5px 2rem 3rem;
+    }
   }
-  #proposals {
-    .grid-row-bottom {
-      grid-column-gap: initial !important;
+  .proposals {
+    &__grid-row-bottom {
+      grid-column-gap: initial;
     }
   }
 }
 @media (max-width: 767px) {
-  #tabs-section {
-    .title-container h2 {
-      font-size: 2.8em;
-    }
-    .tab-content-wrap {
+  .tabs {
+    &__tab-content-wrap {
       grid-template-rows: 50% 50%;
     }
   }
 }
 @media (max-width: 651px) {
-  #proposals {
-    .cards-container {
-      font-size: 23px;
+  .proposals {
+    &__cards-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      .flex-row {
-        display: block;
-      }
-      .grid-row-bottom {
-        display: initial;
-      }
-      .card {
-        margin-bottom: 25px;
-        .image-container img {
-          width: 220px;
-        }
-      }
+    }
+
+    &__flex-row {
+      display: block;
+    }
+    &__grid-row-bottom {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      margin-bottom: 3rem;
+    }
+    &__card {
+      margin-bottom: 3rem;
     }
   }
 }
 @media (max-width: 600px) {
-  #tabs-section {
-    .tabs-section {
-      .tab-content {
-        padding: 0;
-      }
-      .tabs-container {
-        padding: 0;
-        grid-template-columns: initial;
-        grid-template-rows: repeat(5, 50px);
-      }
-      .tab-content-wrap {
-        grid-template-rows: 62% 38%;
-      }
-      .title-container {
-        margin: initial;
-      }
+  .tabs {
+    &__tab-content {
+      padding: 0;
+    }
+    &__container {
+      padding: 0;
+      grid-template-columns: initial;
+      grid-template-rows: repeat(5, 5rem);
+    }
+
+    &__tab-content-wrap {
+      grid-template-rows: 62% 38%;
+    }
+
+    &__title-container {
+      margin: initial;
     }
   }
 }

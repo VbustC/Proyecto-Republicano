@@ -64,6 +64,7 @@ export default {};
 
 <style lang="scss" scoped>
 .footer {
+  margin: 0 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: #1b1d23;
@@ -113,7 +114,7 @@ export default {};
 @media (max-width: 480px) {
   .footer {
     display: block;
-    padding: 2rem 3rem 0px;
+    padding: 2rem 0px;
     height: 100%;
   }
 }

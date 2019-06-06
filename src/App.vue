@@ -25,7 +25,7 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 6rem 0;
 }
 #app {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;

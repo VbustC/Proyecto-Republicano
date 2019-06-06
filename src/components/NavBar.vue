@@ -25,10 +25,7 @@
 export default {};
 </script>
 
-<style scoped>
-.burger__menu {
-  display: none;
-}
+<style lang="scss" scoped>
 .nav {
   display: flex;
   justify-content: space-between;
@@ -51,7 +48,13 @@ export default {};
   align-items: center;
   text-decoration: none;
   font-size: 1.8rem;
+  transition: all 0.5s;
 }
+
+.nav a:hover:not(.router-link-exact-active) {
+  background-color: rgba(36, 68, 162, 0.502);
+}
+
 .nav > .brand {
   font-family: "Montserrat", sans-serif;
   background: none !important;
@@ -71,18 +74,15 @@ export default {};
     padding: initial;
   }
   .nav a {
-    background-color: hsl(225, 63%, 39%, 0.5);
+    background-color: rgba(36, 68, 162, 0.502);
   }
 
   .links {
     margin: initial;
   }
 }
-@media (max-width: 350px) {
-  .nav a {
-    font-size: 1.4rem;
-  }
-}
 </style>
+
+
 
     

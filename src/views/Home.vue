@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <section class="slider">
       <div class="slider__carousel-box">
         <mdb-carousel class="slider__carousel" :interval="5500" showControls>
@@ -129,6 +129,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  padding: 0 3rem;
+}
 .slider {
   &__carousel {
     position: relative;
@@ -137,25 +140,27 @@ export default {
 }
 
 .scroll {
+  backface-visibility: hidden;
   position: absolute;
-  top: 49%;
+  top: 55%;
   left: 50%;
   z-index: 10;
-  transform: translateX(-48%);
+  animation: upAndDown 2s infinite;
 
   &__arrow {
     width: 10rem;
     cursor: pointer;
     transition: all 0.2s;
     border-radius: 100px;
-
-    &:hover {
-      transform: translateY(0.8rem);
-    }
+    transform: translateX(-50%);
   }
 }
 
 .brief {
+  background-color: #f9f9f9;
+  backface-visibility: hidden;
+  margin-top: -1.5px;
+
   &__content-container {
     display: flex;
     padding: 3rem 6rem;
@@ -164,6 +169,16 @@ export default {
 
   &__text-container {
     padding-right: 4.5rem;
+    animation: moveInLeft 2s;
+  }
+
+  &__image-container {
+    animation: moveInRight 2s;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.1);
+    }
   }
 
   &__heading {
@@ -218,6 +233,8 @@ export default {
   }
 }
 .cards {
+  background-color: #f9f9f9;
+
   &__container {
     padding: 5rem 0px;
     display: grid;
@@ -289,14 +306,7 @@ export default {
       text-align: center;
     }
   }
-  .quote {
-    &__phrase-container {
-      padding: 3rem 2rem;
-    }
-    &__block {
-      font-size: 3rem;
-    }
-  }
+
   .cards {
     &__container {
       grid-column-gap: 10%;
@@ -314,10 +324,40 @@ export default {
       grid-template-columns: auto;
     }
   }
-  .brief {
-    &__heading {
-      font-size: 3rem;
-    }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes upAndDown {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: translate(0);
   }
 }
 </style>

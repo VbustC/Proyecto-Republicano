@@ -1,41 +1,55 @@
 <template>
-  <div>
-    <section id="brief">
-      <div class="content-container">
-        <div class="text-container">
-          <h2>EL PROYECTO</h2>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur i velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-          <p>eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+  <div class="container">
+    <section class="brief">
+      <div class="brief__content-container">
+        <div class="brief__text-container">
+          <h2 class="brief__heading-secondary">EL PROYECTO</h2>
+          <p
+            class="brief__paragraph"
+          >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <p
+            class="brief__paragraph"
+          >Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur i velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+          <p
+            class="brief__paragraph"
+          >eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
         </div>
-        <div class="image-container">
-          <img src="@/assets/Component.png" alt="logo2">
-        </div>
-      </div>
-    </section>
-    <section id="objectives-section">
-      <div class="cards-container">
-        <div class="objective-card">
-          <div class="title-container">
-            <h3>MISION</h3>
-          </div>
-          <div class="text-container">
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            <p>eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-          </div>
-        </div>
-        <div class="objective-card">
-          <div class="title-container">
-            <h3>VISION</h3>
-          </div>
-          <div class="text-container">
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            <p>eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-          </div>
+        <div class="brief__image-container">
+          <img class="brief__logo" src="@/assets/Component.png" alt="logo2">
         </div>
       </div>
     </section>
-    <section id="tabs-section">
+    <section class="objectives">
+      <div class="objectives__cards-container">
+        <div class="objectives__objective-card">
+          <div class="objectives__title-container">
+            <h3 class="objectives__heading-tertiary">MISION</h3>
+          </div>
+          <div class="objectives__text-container">
+            <p
+              class="objectives__paragraph"
+            >"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <p
+              class="objectives__paragraph"
+            >eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </div>
+        </div>
+        <div class="objectives__objective-card">
+          <div class="objectives__title-container">
+            <h3 class="objectives__heading-tertiary">VISION</h3>
+          </div>
+          <div class="objectives__text-container">
+            <p
+              class="objectives__paragraph"
+            >"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <p
+              class="objectives__paragraph"
+            >eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tabs-section">
       <Tabs></Tabs>
     </section>
   </div>
@@ -49,137 +63,131 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#brief {
-  .content-container {
-    display: flex;
-    padding: 65px 60px 30px 60px;
-    justify-content: space-between;
+.container {
+  margin: 0 3rem;
+  background-color: #f9f9f9;
+}
 
-    .text-container {
-      padding-right: 6%;
-      h2 {
-        font-size: 50px;
-        color: #0d2773;
-        font-weight: bold;
-        letter-spacing: 12px;
-        text-align: left;
-      }
-      p {
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 110%;
-        text-align: left;
-        margin-bottom: 30px;
-      }
-    }
-    .image-container {
-      img {
-        width: 400px;
-        height: 400px;
-      }
-    }
+.brief {
+  &__content-container {
+    display: flex;
+    padding: 6.5rem 6rem 3rem 6rem;
+    justify-content: space-between;
+  }
+
+  &__text-container {
+    padding-right: 6%;
+    animation: moveInLeft 1.5s;
+  }
+
+  &__heading-secondary {
+    font-size: 5rem;
+    color: #0d2773;
+    font-weight: bold;
+    letter-spacing: 1.2rem;
+    text-align: left;
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 110%;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  &__logo {
+    margin-top: 3.5rem;
+    width: 40rem;
+    height: 40rem;
+    animation: moveInRight 1.5s;
   }
 }
 
-#objectives-section {
+.objectives {
   display: flex;
-  .cards-container {
-    padding: 30px 60px 10px 60px;
+
+  &__cards-container {
+    padding: 3rem 6rem 1rem 6rem;
     display: grid;
     grid-template-columns: 47% 47%;
     grid-column-gap: 6%;
-    .objective-card {
-      color: #ffffff;
-      .title-container {
-        background-color: #2b375a;
-        padding: 30px;
-        h3 {
-          font-size: 40px;
-          margin: 0;
-        }
-      }
-      .text-container {
-        background-color: #566387;
-        padding: 30px 20px;
-        p {
-          margin: 0 0 30px 0;
-          font-size: 20px;
-          text-align: left;
-          line-height: 1.5;
-        }
-      }
-    }
+    animation: moveInUp 1.5s;
+  }
+
+  &__objective-card {
+    color: #ffffff;
+  }
+
+  &__title-container {
+    background-color: #2b375a;
+    padding: 3rem;
+  }
+
+  &__heading-tertiary {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  &__text-container {
+    background-color: #566387;
+    padding: 3rem 2rem;
+  }
+
+  &__paragraph {
+    margin: 0 0 3rem 0;
+    font-size: 2rem;
+    text-align: left;
+    line-height: 1.5;
   }
 }
-#tabs-section {
-  .tabs-content {
-    .tab-content-wrap {
-      .image-column img {
-        height: 100%;
-      }
-    }
-  }
-}
+
 @media (max-width: 1024px) {
-  #brief {
-    .content-container {
-      .image-container img {
-        height: initial;
-        margin-top: 15%;
-      }
-      .text-container h2 {
-        font-size: 2.65em;
-      }
+  .brief {
+    &__logo {
+      height: initial;
+      margin-top: 15%;
     }
   }
 }
 @media (max-width: 842px) {
-  #brief {
-    .content-container {
+  .brief {
+    &__content-container {
       display: initial;
-      .image-container img {
-        height: 100%;
-        margin-top: initial;
-        width: 50%;
-      }
-      .text-container {
-        padding-right: initial;
-        margin: 7% 7% 0px;
-        h2 {
-          text-align: center;
-        }
-        p {
-          padding: 0px 3%;
-        }
-      }
+    }
+    &__logo {
+      height: 100%;
+      margin-top: initial;
+      width: 50%;
+    }
+    &__text-container {
+      padding-right: initial;
+      margin: 7% 7% 0px;
+    }
+
+    &__heading-secondary {
+      text-align: center;
+    }
+    &__paragraph {
+      padding: 0px 3%;
     }
   }
 }
 @media (max-width: 800px) {
-  #brief {
-    .content-container {
-      .text-container {
-        h2 {
-          margin-top: 110px;
-        }
-      }
+  .brief {
+    &__heading-secondary {
+      margin-top: 110px;
     }
   }
 }
 @media (max-width: 767px) {
-  #brief {
-    .content-container {
-      .text-container {
-        margin: initial;
-        h2 {
-          font-size: 2em;
-        }
-      }
+  .brief {
+    &__text-container {
+      margin: initial;
     }
   }
-  #objectives-section {
-    .cards-container {
-      font-size: 30px;
+  .objectives {
+    &__cards-container {
       grid-column-gap: initial;
       grid-template-columns: initial;
       grid-row-gap: 5%;
@@ -188,23 +196,54 @@ export default {
   }
 }
 @media (max-width: 600px) {
-  #objectives-section {
-    .cards-container {
+  .objectives {
+    &__cards-container {
       padding: 0;
       margin-bottom: 16%;
     }
   }
 }
 @media (max-width: 520px) {
-  #brief {
-    .content-container {
-      .text-container {
-        margin: initial;
-        h2 {
-          font-size: 2em;
-        }
-      }
+  .brief {
+    &__text-container {
+      margin: initial;
     }
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }
 </style>
